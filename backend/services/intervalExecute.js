@@ -9,6 +9,8 @@ function handleIntervalExecute() {
         const response = await axios.get("http://localhost:3005/add");
 
         return response.data;
+      } else {
+        await axios.get("http://localhost:3005/add");
       }
     } catch (error) {
       throw error;
