@@ -28,7 +28,7 @@ exports.readDepartmentSheets = async (req, res) => {
 
 exports.addMealPoints = async (req, res) => {
   const queryInsertMealPoints =
-    "INSERT INTO tb_mealpoints(`employee_ID`, `employee_mealpoints`, `valid_from`, `valid_to`) VALUE( ?, ?, ?, ?)";
+    "INSERT INTO tb_mealpoints(`employee_ID`, `employee_mealpoints`, `valid_from`, `valid_to`, `timestamp`) VALUE( ?, ?, ?, ?, NOW())";
 
   try {
     const employeeHeadCounts = await getDataSheets("TEST");
