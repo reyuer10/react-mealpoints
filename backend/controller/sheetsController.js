@@ -23,7 +23,7 @@ exports.readDepartmentSheets = async (req, res) => {
       });
     }
   }
-};
+}; 
 
 exports.addMealPoints = async (req, res) => {
   const queryInsertMealPoints =

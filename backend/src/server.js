@@ -9,13 +9,13 @@ app.use(express.json());
 
 const sheetsRoutes = require("../routes/sheetsRoutes");
 
-// app.get("/", async (req, res) => {
-//   const query = "SELECT * FROM tb_mealpoints";
+app.get("/", async (req, res) => {
+  const query = "SELECT * FROM tb_mealpoints";
 
-//   const results = await databaseQuery(query);
+  const results = await databaseQuery(query);
 
-//   return res.status(200).send(results);
-// });
+  return res.status(200).send(results);
+});
 
 app.use("/", sheetsRoutes);
 
