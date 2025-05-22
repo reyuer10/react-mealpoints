@@ -1,6 +1,7 @@
 const databaseQuery = require("../config/databaseQuery");
-const { validDateFrom, validDataTo } = require("../utils/date");
 const getDataSheets = require("../utils/getDataSheets");
+
+const { validDataTo, validDateFrom } = require("../utils/date");
 
 exports.readDepartmentSheets = async (req, res) => {
   //   const {
@@ -23,7 +24,7 @@ exports.readDepartmentSheets = async (req, res) => {
       });
     }
   }
-}; 
+};
 
 exports.addMealPoints = async (req, res) => {
   const queryInsertMealPoints =
