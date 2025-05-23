@@ -8,14 +8,14 @@ const connection = mysql.createPool({
   database: process.env.DATABASE,
   host: process.env.HOST,
   connectionLimit: 100,
-  connectTimeout: 10000,
   enableKeepAlive: true,
   keepAliveInitialDelay: 3 * 1000,
   maxIdle: 0,
+  idleTimeout: 5 * 6 * 1000,
   queueLimit: 0,
 });
 
-connection.getConnection((err, data) => {
+connection.on((err, data) => {
   if (err) {
     console.log("Can't connect to the database.");
   }

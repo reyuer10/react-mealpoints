@@ -4,10 +4,6 @@ const getDataSheets = require("../utils/getDataSheets");
 const { validDataTo, validDateFrom } = require("../utils/date");
 
 exports.readDepartmentSheets = async (req, res) => {
-  //   const {
-  //     body: { department_type },
-  //   } = req;
-
   try {
     const employeeValues = await getDataSheets("TEST");
     return res.status(200).send(employeeValues);
@@ -50,6 +46,16 @@ exports.addMealPoints = async (req, res) => {
   } catch (error) {
     return res.status(500).send({
       message: "Internal Server Error.",
+      error: error,
+    });
+  }
+};
+
+exports.viewMealCredits = async (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({
+      message: "Internal Server Error",
       error: error,
     });
   }
